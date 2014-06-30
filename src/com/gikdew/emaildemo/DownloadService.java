@@ -152,7 +152,7 @@ public class DownloadService extends Service {
 		public void sendNotification() {
 			Intent intent = new Intent(DownloadService.this, App.class);
 			intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-			PendingIntent pIntent = PendingIntent.getActivity(getApplicationContext(), 0, intent, 0);
+			PendingIntent pIntent = PendingIntent.getActivity(DownloadService.this, 0, intent, 0);
 
 			// build notification
 			// the addAction re-use the same intent to keep the example short

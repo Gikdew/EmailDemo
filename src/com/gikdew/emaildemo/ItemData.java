@@ -51,22 +51,18 @@ public class ItemData {
 		try {
 			Date date = null;
 			date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).parse(string);
-			long milliseconds = date.getTime();
 			//long millisecondsFromNow = milliseconds - (new Date()).getTime();
 			long time = System.currentTimeMillis();
 			TimeZone pacificTimeZone = TimeZone.getTimeZone("America/Los_Angeles");
 			
 			long currentTime = time;
-			
-			long convertedTime = System.currentTimeMillis() +  pacificTimeZone.getOffset(System.currentTimeMillis()); //Time in los Angeles
-			Log.d("Date", Long.toString(time) + " " + pacificTimeZone.getOffset(System.currentTimeMillis()));
+			//Log.d("Date", Long.toString(time) + " " + pacificTimeZone.getOffset(System.currentTimeMillis()));
 			//Log.d("Date Converted", Long.toString(time-convertedTime));
 			
 			
-			Calendar mCalendar = new GregorianCalendar();  
 			TimeZone mTimeZone = TimeZone.getDefault();
 			int mGMTOffset = mTimeZone.getRawOffset(); 
-			Log.d("GMT", String.valueOf(mGMTOffset));
+			//Log.d("GMT", String.valueOf(mGMTOffset));
 			Date finalTime = new Date(date.getTime() - pacificTimeZone.getOffset(currentTime) + mGMTOffset + 3600000);
 			//System.out.printf("GMT offset is %s hours", TimeUnit.HOURS.convert(mGMTOffset, TimeUnit.MILLISECONDS)); 
 						
