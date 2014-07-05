@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.gikdew.emaildemo"
-    android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionCode="3"
+    android:versionName="1.2" >
 
     <uses-sdk
         android:minSdkVersion="7"
@@ -17,19 +17,19 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-        <receiver android:name="com.gikdew.emaildemo.BootReceiver" >
+        <receiver android:name="com.gikdew.BinaryOptionsSignals.BootReceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
 
         <service
-            android:name="com.gikdew.emaildemo.DownloadService"
+            android:name="com.gikdew.BinaryOptionsSignals.DownloadService"
             android:process=":binaryOptionsSignals" >
         </service>
 
         <activity
-            android:name="com.gikdew.emaildemo.Boot"
+            android:name="com.gikdew.BinaryOptionsSignals.Boot"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,16 +37,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.gikdew.emaildemo.MainActivity"
+            android:name="com.gikdew.BinaryOptionsSignals.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.gikdew.emaildemo.App"
+            android:name="com.gikdew.BinaryOptionsSignals.App"
             android:label="@string/app_name" >
-		    <meta-data
-	            android:name="android.support.PARENT_ACTIVITY"
-	            android:value="com.gikdew.emaildemo.Boot" />      
+		        
         </activity>
     </application>
 
